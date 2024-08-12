@@ -5,7 +5,9 @@ import json
 # Initialize the Bedrock client
 bedrock = boto3.client(
     service_name='bedrock-runtime',
-    region_name='us-east-1'  # Replace with your preferred region
+    region_name=st.secrets["AWS_DEFAULT_REGION"],
+    aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"]
 )
 
 # Streamlit app
